@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
+    "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles  ",
+    "test-inspect-auth": "node --inspect-brk node_modules/.bin/jest --runInBand src/utils/__tests__/auth.spec.js ",
     "test-routes": "yarn test -t router",
     "test-models": "yarn test -t model",
     "test-controllers": "yarn test -t controllers",
@@ -61,9 +62,7 @@
     "testURL": "http://localhost/",
     "testEnvironment": "node",
     "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup.js",
-    "testPathIgnorePatterns": [
-      "dist/"
-    ],
+    "testPathIgnorePatterns": ["dist/"],
     "restoreMocks": true
   }
 }
